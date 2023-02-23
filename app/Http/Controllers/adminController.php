@@ -4,12 +4,20 @@ use App\Models\register;
 use App\Models\User;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
     public function index()
     {
-        return Inertia::render('admin/home');
+        $data=DB::table('pengaduans')
+        ->leftJoin('users','users.id','=','pengaduans.id_masyarakat')
+        ->select('pengaduans.*','users.nik','users.nama')
+        ->latest()
+        ->get();
+        return Inertia::render('admin/home',[
+        'datas'=>$data
+        ]);
     }
     public function user()
     {

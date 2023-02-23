@@ -27,6 +27,13 @@ class loginController extends Controller
             return redirect('petugas');
     }
     else{
+        $request->validate([
+            'username'=>'required',
+            'password'=>'required',
+        ], [
+            'username.required'=>"Username salah",
+            'password.required'=>"Password salah"
+        ]);
         return redirect('/');
     }
 }

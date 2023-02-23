@@ -2,9 +2,12 @@
     <v-app>
         <v-main>
             <div class="d-flex justify-center">
-                <v-card elevation="2" width="400" height="320" class="mt-15 rounded-shaped b" color="green">
+                <v-card elevation="2" width="400" height="320" class="mt-15 rounded-shaped b">
                     <div class="text-center mt-3">
                         <span> LOGIN </span>
+                    </div>
+                    <div v-if="$page.props.flash.message" class="alert">
+                        {{ $page.props.flash.message }}
                     </div>
                     <v-card-text>
                         <v-form color="white">

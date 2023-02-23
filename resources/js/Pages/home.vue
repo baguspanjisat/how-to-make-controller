@@ -2,13 +2,12 @@
     <v-app>
         <v-main>
             <div class="d-flex justify-center">
-                <v-card elevation="2" width="400" height="320" class="mt-15">
-                    <div class="text-center">
+                <v-card elevation="2" width="400" height="320" class="mt-15 rounded-shaped b" color="green">
+                    <div class="text-center mt-3">
                         <span> LOGIN </span>
                     </div>
-
                     <v-card-text>
-                        <v-form>
+                        <v-form color="white">
                             <v-text-field label="Username" v-model="form.username"
                                 :error-messages="errors.username"></v-text-field>
                             <v-text-field label="Password" type="password" v-model="form.password"
@@ -21,6 +20,7 @@
                     </v-card-text>
                 </v-card>
             </div>
+            div
         </v-main>
     </v-app>
 </template>
